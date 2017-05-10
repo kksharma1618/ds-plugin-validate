@@ -80,8 +80,6 @@ function handleRecord(options: any, data: any, next: (err?: Error) => any) {
 
 function handleMessage(type: "event" | "record" | "rpc", options: any, messageId: string, key: string, value: string, next: (err?: Error) => any) {
 
-  const parsedValue = parseValue(value);
-
   let msgOptions, matchedMessagePattern;
   for(let pattern in options) {
     if(msgOptions) {
@@ -103,6 +101,8 @@ function handleMessage(type: "event" | "record" | "rpc", options: any, messageId
   if(!msgOptions) {
     return next();
   }
+
+  const parsedValue = parseValue(value);
 
   if(type != "record") { // no key, msgOptions will be matched against parsedValue directly
     let r = validate(parsedValue, msgOptions);
@@ -127,7 +127,7 @@ function handleMessage(type: "event" | "record" | "rpc", options: any, messageId
   }
   else {
     if(!additionalProperties) {
-      return next(new Error("no such key allowed:"+key));
+      return next(new Error("no such key allowed: "+key));
     }
     schema = additionalProperties;
   }
