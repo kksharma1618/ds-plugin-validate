@@ -1,0 +1,30 @@
+{
+  "name": "ds-plugin-validate",
+  "is_deepstream_plugin": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index",
+  "types": "build/index",
+  "scripts": {
+    "build": "tsc",
+    "watch": "nodemon -e ts -w ./src  --exec \"npm run build\""
+  },
+  "keywords": [],
+  "author": "Krishna Kant Sharma <kksharma1618@gmail.com>",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "@types/jsonschema": "^1.1.1",
+    "@types/lodash": "^4.14.64",
+    "@types/minimatch": "^2.0.29",
+    "@types/node": "^7.0.18",
+    "nodemon": "^1.11.0",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "jsonschema": "^1.1.1",
+    "lodash": "^4.17.4",
+    "minimatch": "^3.0.4"
+  }
+}
