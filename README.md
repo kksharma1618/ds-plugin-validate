@@ -86,4 +86,12 @@ Uncaught Error: UNSOLICITED_MESSAGE: PEINVALID_MESSAGE_DATA argument[1] is no
     at RpcHandler._$handle (bundle.js:38922)
     at Client._$onMessage (bundle.js:36395)
     at Connection._onMessage (bundle.js:37284)
+
+client.record.getRecord("some/record/abc").set("nosuchkey1", "aasdasdasdasd"); // triggers a client side error
+
+Uncaught Error: INVALID_MESSAGE_DATA: no such key allowed:nosuchkey1 (R)
+    at Client._$onError (bundle.js:36452)
+    at RecordHandler._$handle (bundle.js:38561)
+    at Client._$onMessage (bundle.js:36395)
+    at Connection._onMessage (bundle.js:37284)
 ```
