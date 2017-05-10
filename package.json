@@ -7,7 +7,8 @@
   "types": "build/index",
   "scripts": {
     "build": "tsc",
-    "watch": "nodemon -e ts -w ./src  --exec \"npm run build\""
+    "watch": "nodemon -e ts -w ./src  --exec \"npm run build\"",
+    "install": "tsc"
   },
   "keywords": [],
   "author": "Krishna Kant Sharma <kksharma1618@gmail.com>",
